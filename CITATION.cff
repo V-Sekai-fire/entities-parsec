@@ -1,0 +1,54 @@
+cff-version: 1.2.0
+title: wallpaper-parsec
+message: A Windows 11 tray app that hosts the Parsec client in the desktop wallpaper layer.
+type: software
+authors:
+  - given-names: K. S. Ernest
+    name-particle: iFire
+    family-names: Lee
+    email: ernest.lee@chibifire.com
+license: MIT
+repository-code: https://github.com/v-sekai-multiplayer-fabric/wallpaper-parsec
+
+references:
+  # The whole app is a composition of these documented calls. Nothing is vendored: there is no
+  # dependency file to record this in, because the dependency is an operating system API.
+  - type: manual
+    title: "SetParent function (winuser.h)"
+    authors:
+      - name: Microsoft
+    url: https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-setparent
+  - type: manual
+    title: "SetWindowLongPtrW function (winuser.h)"
+    authors:
+      - name: Microsoft
+    url: https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-setwindowlongptrw
+  - type: manual
+    title: "SetWindowPos function (winuser.h)"
+    authors:
+      - name: Microsoft
+    url: https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-setwindowpos
+  - type: manual
+    title: "EnumWindows function (winuser.h)"
+    authors:
+      - name: Microsoft
+    url: https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-enumwindows
+  - type: manual
+    title: "Window Styles"
+    authors:
+      - name: Microsoft
+    url: https://learn.microsoft.com/en-us/windows/win32/winmsg/window-styles
+  - type: manual
+    title: "Taskbar creation notification (TaskbarCreated)"
+    authors:
+      - name: Microsoft
+    url: https://learn.microsoft.com/en-us/windows/win32/shell/taskbar
+
+  # Progman message 0x052C is undocumented; it is described publicly rather than specified.
+  # Named as the description of the technique, not as a source of code: no GPL implementation
+  # was consulted, so this project carries no copyleft obligation.
+  - type: blog
+    title: "Draw behind desktop icons in Windows 8+"
+    authors:
+      - name: Ravi Bhavnani
+    url: https://www.codeproject.com/Articles/856020/Draw-Behind-Desktop-Icons-in-Windows-plus
